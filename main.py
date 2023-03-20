@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 #! python3
 
 class OnceEquation():
@@ -48,4 +47,22 @@ class TwiceEquation():
             else:
                 X = [str(b_)+"/"+str(a_two),str(b_)+"/"+str(a_two)]
                 return(X)
-            
+        if delta > 0:
+            didelta = delta//2
+            if ifInt(didelta):
+                son_1 = -1*self.b + didelta
+                son_2 = -1*self.b - didelta
+                mother = 2*self.a
+                if ifInt(son_1/mother) and ifInt(son_2/mother):
+                    value_1 = int(son_1/mother)
+                    value_2 = int(son_2/mother)
+                    X = [value_1,value_2]
+                    return(X)
+                    
+                elif ifInt(son_1/mother) or ifInt(son_2/mother):
+                    if ifInt(son_1/mother) and ifInt(son_2/mother) != 1:
+                        value_1 = son_1/mother
+                        value_2 =str(int(son_2))+"/"+str(int(mother))
+                        X = [value_1,value_2]
+                        return(X)
+          
